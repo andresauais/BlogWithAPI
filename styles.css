@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap');
+
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html {
+    font-size: 62.5%; /* 1 rem == 10 px*/
+}
+
+:root {
+    --header-grey: rgb(31,31,31);
+    --post-grey: rgb(92, 92, 92);
+    --pink-title: rgb(205,92,92);
+    --grey-social: rgb(190, 188, 188);
+    --cyan-social: rgb(0,206,209);
+}
+
+/* HEADER AREA */
+
+.header {
+    height: 100vh;
+    width: 22vw;
+    background: linear-gradient(360deg, var(--header-grey) 10%, #f4f4f4 360%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__button {
+    margin-top: 3rem;
+}
+
+.header__button-h1 {
+    font-size: 3.8rem;
+    font-weight: 600;
+    color: var(--pink-title);
+}
+
+.header__button-h1:hover {
+    color: var(--cyan-social);
+}
+
+.header__div-social {
+    margin: 2rem 0;
+}
+
+.header__div-button {
+    height: 5vh;
+    width: 5vh;
+    margin: 0 5px;
+}
+
+.header__div-button:hover {
+    color: var(--cyan-social);
+}
+
+hr {
+    height: 2px;
+    width: 15vw;
+    border-width: 0;
+    color:var(--grey-social);
+    background-color: var(--grey-social);
+    margin-bottom: 3vh;
+}
+
+.header__div-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__div-menu:hover {
+    color: var(--cyan-social);
+}
+
+.header__div-menu-h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    min-height: 44px;
+    color: var(--grey-social);
+}
+
+/* ASIDE AREA */
+
+.aside {
+    width: 78vw;
+    height: 10vh;
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: 1.5vw;
+}
+
+.aside__button {
+    margin-left: auto;
+    color: var(--pink-title);
+}
+
+.aside__button:hover {
+    color: var(--cyan-social);
+}
+
+
+/* MAIN AREA */
+
+.hr__main {
+    width: 78vw;
+    margin-left: auto;
+}
+
+.container {
+    width: 74vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.postTitle {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: var(--post-grey);
+}

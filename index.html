@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog with API</title>
-    <link id="style" rel="stylesheet" href="style.css">
+    <link id="style" rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-
+    <header class="header">
+        <button  class="btn header__button" href="#0"><h1 class="header__button-h1">Mock Blog</h1></button>
+        <div class="header__div-social">
+            <button class="btn header__div-button"><i class="fab fa-facebook-f fa-2x"></i></button>
+            <button class="btn header__div-button"><i class="fab fa-twitter fa-2x"></i></button>
+            <button class="btn header__div-button"><i class="fab fa-github-square fa-2x"></i></button>
+            <button class="btn header__div-button"><i class="fab fa-instagram fa-2x"></i></button>
+        </div>
+        <hr/>
+        <div class="header__div-menu">
+            <button class="btn header__div-menu"><h2 class="header__div-menu-h2">Home</h2></button>
+            <button class="btn header__div-menu"><h2 class="header__div-menu-h2">About</h2></button>
+            <button class="btn header__div-menu"><h2 class="header__div-menu-h2">Facebook</h2></button>
+            <button class="btn header__div-menu"><h2 class="header__div-menu-h2">Twitter</h2></button>
+            <button class="btn header__div-menu"><h2 class="header__div-menu-h2">Instagram</h2></button>
+        </div>
     </header>
-    <main id="container">
+    <aside class="aside">
+        <button class="btn aside__button"><i class="fa fa-search fa-2x"></i></button>
+    </aside>
+    <main id="container" class="container">
+        <hr class="hr__main"/>
 
     </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

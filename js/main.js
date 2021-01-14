@@ -23,10 +23,10 @@ function createPost(data){
     }
 
     function createTitle(postTitle){
-        let p = $('<p></p>');
-        p.addClass("postTitle");
-        p.text(postTitle);
-        return p;
+        let h = $('<h3></h3>');
+        h.addClass("postTitle");
+        h.text(postTitle);
+        return h;
     }
 
     function createBody(postBody){
