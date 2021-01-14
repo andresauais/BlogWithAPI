@@ -140,10 +140,7 @@ hr {
     font-weight: 400;
     text-transform: capitalize;
     color: var(--post-grey);
-}  
-.postContainer{
-    border: 1px solid black;
-}
+} 
 
 #modal-post {
     position: fixed;
