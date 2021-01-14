@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap');
 
 /* GLOBAL STYLES */
@@ -139,4 +140,43 @@ hr {
     font-weight: 400;
     text-transform: capitalize;
     color: var(--post-grey);
+=======
+.postContainer{
+    border: 1px solid black;
+}
+
+#modal-post {
+    position: fixed;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    left : 0;
+    top: 0;
+    width: 0px;
+    max-height: 80vh;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+}
+#modal-post.visible {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.15s ease-out;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow:scroll;
+}
+.modal {
+    position: absolute;
+    margin: 0 auto;
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    top: 50%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translateY(-50%);
+>>>>>>> post-modal
 }

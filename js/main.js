@@ -15,9 +15,9 @@ $.ajax(link, {
 function createPost(data){
     for(index in data){
         let div = $('<div></div>')
+        div.attr("id", index);
         div.addClass("postContainer");
         $('#container').append(div);
-        console.log(div);
         div.append(createTitle(data[index].title));
         div.append(createBody(data[index].body));
     }
@@ -35,4 +35,5 @@ function createPost(data){
         p.text(postBody);
         return p;
     }
+    createModal(data);
 }
