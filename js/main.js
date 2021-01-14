@@ -11,10 +11,10 @@ const createPost = data => {
         const $title = createTitle(post.title);
         const $body = createBody(post.body);
 
-        div.id = index;
-        div.addClass('postContainer');
-        div.append($title);
-        div.append($body);
+        $article.attr('id', index);
+        $article.addClass('postContainer');
+        $article.append($title);
+        $article.append($body);
         $('#container').append($article);
     });
 

@@ -2,8 +2,7 @@ const users = 'https://jsonplaceholder.typicode.com/users';
 const comments = 'https://jsonplaceholder.typicode.com/posts/';
 
 function createModal(data){
-    $('.postContainer').click(function (e){
-
+    $('.postContainer').click(function(e){
         var modalRoot = $('#modal-post');
         var modal = $('.postModal');
 
@@ -18,6 +17,7 @@ function createModal(data){
         //$('#modalPostLoad').on("click", loadComments(data[e.currentTarget.id].id));
 
         function setUpModal(e){
+            console.log(data[e.currentTarget.id])
             $("#modalPostTitle").text(data[e.currentTarget.id].title);
             $("#modalPostBody").text(data[e.currentTarget.id].body);
             var userIdPost = data[e.currentTarget.id].userId;
