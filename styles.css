@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap');
 
 /* GLOBAL STYLES */
@@ -140,7 +140,7 @@ hr {
     font-weight: 400;
     text-transform: capitalize;
     color: var(--post-grey);
-=======
+}  
 .postContainer{
     border: 1px solid black;
 }
@@ -178,5 +178,4 @@ hr {
     max-height: 80vh;
     overflow-y: auto;
     transform: translateY(-50%);
->>>>>>> post-modal
 }
