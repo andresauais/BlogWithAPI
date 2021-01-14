@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog with API</title>
-    <link id="style" rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -13,8 +14,24 @@
 
     </main>
 
+    <aside id="modal-post">
+        <div class="modal postModal">
+            <div id="modalPostCloseTop" class="close-modal"><i class="fa fa-close"></i></div>
+            <h5><span id="modalPostTitle"></span></h2>
+            <p><span id="modalPostBody"></span></p>
+            <h5>USER</h5>
+            <p><span id="modalPostUserId"></span></p>
+            <p><span id="modalPostEmail"></span></p><hr>
+            <h5>Comments:</h5>
+            <div class="modal-btn">
+                <button id="modalPostLoad">Load comments</button>
+            </div>
+            <div id="comments"></div>
+        </div>
+    </aside>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/postModal.js"></script>
 </body>
 
 </html>
