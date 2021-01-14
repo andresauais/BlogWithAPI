@@ -1,39 +1,25 @@
-const link = 'https://jsonplaceholder.typicode.com/posts/';
+const link = 'https://jsonplaceholder.typicode.com/posts/',
+    success = (data, statusText, jqXHR) => createPost(data),
+    fail = (jqXHR, errorStatusText, errorMessage) => console.log(errorMessage);
 
-$.ajax(link, {
-    method: 'GET'
-}).then(
-    function success(data, statusText, jqXHR){
-        console.log(data);
-        createPost(data);
-    },
-    function fail(jqXHR, errorStatusText, errorMessage){
-        console.log(errorMessage);
-    }
-)
+const createPost = data => {
+    const createTitle = title => $('<h3></h3>').addClass('postTitle').text(title);
+    const createBody = body => $('<p></p>').addClass('postBody').text(body);
 
-function createPost(data){
-    for(index in data){
-        let div = $('<div></div>')
-        div.attr("id", index);
-        div.addClass("postContainer");
-        $('#container').append(div);
-        div.append(createTitle(data[index].title));
-        div.append(createBody(data[index].body));
-    }
+    data.forEach((post, index) => {
+        const $article = $('<article></article>');
+        const $title = createTitle(post.title);
+        const $body = createBody(post.body);
 
-    function createTitle(postTitle){
-        let h = $('<h3></h3>');
-        h.addClass("postTitle");
-        h.text(postTitle);
-        return h;
-    }
+        div.id = index;
+        div.addClass('postContainer');
+        div.append($title);
+        div.append($body);
+        $('#container').append($article);
+    });
 
-    function createBody(postBody){
-        let p = $('<p></p>');
-        p.addClass("postBody");
-        p.text(postBody);
-        return p;
-    }
     createModal(data);
 }
+
+$.ajax(link, { method: 'GET' })
+    .then(success, fail);
