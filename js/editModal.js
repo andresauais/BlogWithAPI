@@ -4,6 +4,8 @@ function openEditModal(){
 
 function closeEditModal(){
     dialog.close();
+    $('#title').val('');
+    $('#body').val('');
 }
 
 function editPostModal(data){
@@ -14,6 +16,8 @@ function editPostModal(data){
     });
     $('#editClose').click(closeEditModal);
     $('#submitBtn').click(submitEditModal);
+    $('#title').val('');
+    $('#body').val('');
 }
 
 $('#form').submit(function (e) {
