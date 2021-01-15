@@ -99,6 +99,7 @@ hr {
     outline: none;
     min-height: 44px;
     color: var(--grey-social);
+    cursor: pointer;
 }
 
 /* ASIDE AREA */
@@ -152,6 +153,7 @@ hr {
 
 .postTitle:hover {
     color: var(--cyan-social);
+    cursor: pointer;
 }
 
 .hrPost {
@@ -255,11 +257,11 @@ hr {
     width: 50%;
     margin-top: 2%;
     margin-right: 2%;
-    border: none;
     padding: 2%;
     border-radius: 5px;
     border: 2px solid var(--grey-social);
     color: var(--pink-title);
+    outline: none;
 }
 #modalPostLoad:hover {
     transform: scale(1.04);

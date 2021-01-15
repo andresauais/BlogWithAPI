@@ -105,7 +105,7 @@ const createPost = data => {
         $('#container').append($article);
     });
 
-    // createModal(data);
+    createModal(data);
     editPostModal(data);
 }
 
