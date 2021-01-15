@@ -30,7 +30,30 @@ const createPost = data => {
 
         const $body = createBody(post.body);
         const $userTitle = createUserTitle(post.userId);
+        $.ajax(users, {
+            method: 'GET'
+        }).then(
+            function success(usersData, statusText, jqXHR){
+                matchUserWithPost(usersData, post.userId);
+                $userTitle.text(matchUserWithPost(usersData, post.userId)[0]);
+            },
+            function fail(jqXHR, errorStatusText, errorMessage){
+                console.log(errorMessage);
+            }
+        )
         const $commentTitle = createCommentTitle(post.userId);
+        var commentsURL = comments + post.id + "/comments";
+        $.ajax(commentsURL, {
+            method: 'GET'
+        }).then(
+            function success(commentsData, statusText, jqXHR){
+                $commentTitle.text(commentsData.length);
+            },
+            function fail(jqXHR, errorStatusText, errorMessage){
+                console.log(errorMessage);
+            }
+        )
+        console.log(commentsURL);
 
         $hr.addClass('hrPost');
         $divUser.addClass('divUser');
