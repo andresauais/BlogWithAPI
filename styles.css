@@ -176,3 +176,51 @@ hr {
     overflow-y: auto;
     transform: translateY(-50%);
 }
+
+#modalPostTitle{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#modalPostBody, #modalPostUserId, #modalPostEmail{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.modalHeader{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comments{
+    border-top: 1px black solid;
+    padding-top: 5px;
+}
+
+#modalPostLoad{
+    width: 50%;
+    margin-top: 2%;
+    margin-right: 2%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 2%;
+}
+.commentsContainer{
+    border-bottom: 1px solid black;
+}
+.commentName{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.commentBody, .commentEmail{
+    font-size: 12px;
+    margin-bottom: 5px;
+}

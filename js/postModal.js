@@ -9,18 +9,18 @@ function createModal(data){
         var modalPostCloseTop = $("#modalPostCloseTop");
         modalPostCloseTop.click(function(){rootClick();});
 
-        setUpModal(e);
+        setUpModal();
         openModal();
         //modalRoot.click(()=> {rootClick()});
         //modal.click(function() {modalClick(e)});
 
         //$('#modalPostLoad').on("click", loadComments(data[e.currentTarget.id].id));
 
-        function setUpModal(e){
-            console.log(data[e.currentTarget.id])
-            $("#modalPostTitle").text(data[e.currentTarget.id].title);
-            $("#modalPostBody").text(data[e.currentTarget.id].body);
-            var userIdPost = data[e.currentTarget.id].userId;
+        function setUpModal(){
+            var dataId = data[event.currentTarget.id].id;
+            $("#modalPostTitle").text(data[event.currentTarget.id].title);
+            $("#modalPostBody").text(data[event.currentTarget.id].body);
+            var userIdPost = data[event.currentTarget.id].userId;
             $.ajax(users, {
                 method: 'GET'
             }).then(
@@ -29,7 +29,8 @@ function createModal(data){
                     $('#modalPostUserId').text(matchUserWithPost(usersData, userIdPost)[0]);
                     $('#modalPostEmail').text(matchUserWithPost(usersData, userIdPost)[1]);
                     $('#modalPostLoad').on("click", ()=>{
-                        loadComments(data[e.currentTarget.id].id);
+                        loadComments(dataId);
+                        dataId = undefined;
                     })
                 },
                 function fail(jqXHR, errorStatusText, errorMessage){
@@ -40,7 +41,9 @@ function createModal(data){
 
         function rootClick() {
             modalRoot.removeClass('visible');
-            $('#comments').children().remove();
+            $('#comments').empty();
+            $('#commentsContainer').empty();
+            $('#modalPostLoad').show();
         }
 
         function openModal() {
@@ -64,16 +67,18 @@ function matchUserWithPost(usersData, userIdPost){
 }
 
 function loadComments(postId){
+    console.log(postId);
+    $('#modalPostLoad').hide();
     let commentsContainer = $('<div></div>')
     commentsContainer.attr('id','commentsContainer');
     $('#comments').append(commentsContainer);
-
     var commentsURL = comments + postId + "/comments";
     $.ajax(commentsURL, {
         method: 'GET'
     }).then(
         function success(commentsData, statusText, jqXHR){
             createComments(commentsData);
+            console.log(commentsData);
         },
         function fail(jqXHR, errorStatusText, errorMessage){
             console.log(errorMessage);
@@ -83,7 +88,8 @@ function loadComments(postId){
 
 function createComments(commentsData){
     for(index in commentsData){
-        let div = $('<div></div>')
+        let div = $('<div></div>');
+        div.addClass('commentsContainer');
         $('#commentsContainer').append(div);
         div.append(createCommentName(commentsData[index].name));
         div.append(createCommentBody(commentsData[index].body));
