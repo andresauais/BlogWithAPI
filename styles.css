@@ -66,12 +66,16 @@ html {
 }
 
 hr {
-    height: 2px;
+    height: 1px;
     width: 15vw;
     border-width: 0;
     color:var(--grey-social);
     background-color: var(--grey-social);
     margin-bottom: 3vh;
+}
+
+.hr__header {
+    height: 2px;
 }
 
 .header__div-menu {
@@ -101,9 +105,9 @@ hr {
 
 .aside {
     width: 78vw;
-    height: 10vh;
+    height: 13vh;
     display: flex;
-    position: sticky;
+    flex-direction: column;
     top: 0;
     align-items: center;
     z-index: 1;
@@ -112,7 +116,7 @@ hr {
 }
 
 .aside__button {
-    margin-left: auto;
+    margin: 1rem 1rem 1rem auto;
     color: var(--pink-title);
 }
 
@@ -120,13 +124,13 @@ hr {
     color: var(--cyan-social);
 }
 
-
-/* MAIN AREA */
-
 .hr__main {
-    width: 78vw;
+    width: 93vw;
     margin-left: auto;
 }
+
+
+/* MAIN AREA */
 
 .container {
     width: 74vw;
@@ -135,12 +139,58 @@ hr {
     margin-left: auto;
 }
 
+.postContainer {
+    margin-right: 4vw;
+}
+
 .postTitle {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 400;
     text-transform: capitalize;
     color: var(--post-grey);
-} 
+}
+
+.postTitle:hover {
+    color: var(--cyan-social);
+}
+
+.hrPost {
+    width: 70vw;
+}
+
+.postBody {
+    font-size: 2rem;
+    color: var(--post-grey);
+    text-align: justify;
+}
+
+.divUser {
+    display: flex;
+}
+
+.postButton {
+    display: flex;
+    align-items: center;
+    margin-right: 5rem;
+}
+
+.postButton:hover {
+    color: var(--cyan-social);
+}
+
+.articleTitle {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+
+.divEdit {
+    display: flex;
+    margin-bottom: 4rem;
+
+}
+
+/* MODAL AREA */
 
 #modal-post {
     position: fixed;
