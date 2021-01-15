@@ -32,7 +32,26 @@
     <main id="container" class="container">
 
     </main>
-
+    <dialog class="dialog" id="dialog">
+        <form class="dialog__form" id="form">
+            <div class="dialog__form-div">
+                <h2 class="dialog__form-div-h2">Edit post</h2>
+                <hr>
+                <div class="dialog__form-div-div">
+                    <label class="dialog__form-div-label" for="title"><b>Post Title</b></label>
+                    <input class="dialog__form-div-input" type="text"  name="title" placeholder="Enter task title" id="title" required autocomplete="off">
+                </div>
+                <div class="dialog__form-div-div">
+                    <label class="dialog__form-div-label" for="description"><b>Post Body</b></label>
+                    <textarea class="dialog__form-div-textarea" name="description" type="description" placeholder="Enter description" id="description" rows="5" required></textarea>
+                </div>
+                <div class="clearfix">
+                    <input class="submit cancel" id="cancelBtn" type="reset" value="Cancel"/>
+                    <input class="submit create-task not-allowed" id="createBtn" type="submit" value="Create task"/>
+                </div>
+            </div>
+        </form>
+    </dialog>
     <aside id="modal-post">
         <div class="modal postModal">
             <div id="modalPostCloseTop" class="close-modal"><i class="fa fa-close"></i></div>
