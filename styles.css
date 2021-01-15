@@ -133,7 +133,7 @@ hr {
 /* MAIN AREA */
 
 .container {
-    width: 74vw;
+    width: 73vw;
     display: flex;
     flex-direction: column;
     margin-left: auto;
