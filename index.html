@@ -32,18 +32,37 @@
     <main id="container" class="container">
 
     </main>
-
+    <dialog class="dialog" id="dialog">
+        <form class="dialog__form" id="form">
+            <div class="close-modal"><i id="editClose" class="fa fa-close"></i></div>
+            <div class="dialog__form-div">
+                <h2 class="dialog__form-div-h2" id="editPost">Edit Post</h2>
+                <hr class="editHr">
+                <div class="dialog__form-div-div">
+                    <label class="dialog__form-div-label" for="title"><b id="editTitle">Post Title</b></label>
+                    <input class="dialog__form-div-input" type="text"  name="title" id="title" required autocomplete="off">
+                </div>
+                <div class="dialog__form-div-div">
+                    <label class="dialog__form-div-label" for="body"><b id="editBody">Post Body</b></label>
+                    <textarea class="dialog__form-div-input" type="text"  name="body" id="body" rows="5" required autocomplete="off"></textarea>
+                </div>
+                <div class="div__submit">
+                    <input class="submit create-task not-allowed" id="submitBtn" type="submit" value="Update Post"/>
+                </div>
+            </div>
+        </form>
+    </dialog>
     <aside id="modal-post">
         <div class="modal postModal">
             <div id="modalPostCloseTop" class="close-modal"><i class="fa fa-close"></i></div>
-            <p id="modalPostTitle"></p>
+            <p id="modalPostTitle" class="postTitle"></p>
             <p id="modalPostBody"></p>
             <p class="modalHeader">USER<p>
             <p id="modalPostUserId"></p>
             <p id="modalPostEmail"></p>
             <p class="modalHeader comments">Comments:<p>
             <div class="modal-btn">
-                <button id="modalPostLoad">Load comments</button>
+                <button id="modalPostLoad">Load Comments</button>
             </div>
             <div id="comments"></div>
         </div>
@@ -51,6 +70,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/postModal.js"></script>
+<script src="js/editModal.js"></script>
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 

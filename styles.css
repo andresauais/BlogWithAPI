@@ -69,7 +69,7 @@ hr {
     height: 1px;
     width: 15vw;
     border-width: 0;
-    color:var(--grey-social);
+    color: var(--grey-social);
     background-color: var(--grey-social);
     margin-bottom: 3vh;
 }
@@ -99,6 +99,7 @@ hr {
     outline: none;
     min-height: 44px;
     color: var(--grey-social);
+    cursor: pointer;
 }
 
 /* ASIDE AREA */
@@ -133,7 +134,7 @@ hr {
 /* MAIN AREA */
 
 .container {
-    width: 74vw;
+    width: 73vw;
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -152,6 +153,7 @@ hr {
 
 .postTitle:hover {
     color: var(--cyan-social);
+    cursor: pointer;
 }
 
 .hrPost {
@@ -190,7 +192,7 @@ hr {
 
 }
 
-/* MODAL AREA */
+/* POST MODAL AREA */
 
 #modal-post {
     position: fixed;
@@ -217,7 +219,7 @@ hr {
     position: absolute;
     margin: 0 auto;
     width: 50%;
-    background-color: white;
+    background-color: #f4f4f4;
     padding: 20px;
     border-radius: 5px;
     position: relative;
@@ -225,6 +227,7 @@ hr {
     max-height: 80vh;
     overflow-y: auto;
     transform: translateY(-50%);
+    color: var(--post-grey);
 }
 
 #modalPostTitle{
@@ -246,7 +249,7 @@ hr {
 }
 
 .comments{
-    border-top: 1px black solid;
+    border-top: 1px var(--grey-social) solid;
     padding-top: 5px;
 }
 
@@ -254,14 +257,19 @@ hr {
     width: 50%;
     margin-top: 2%;
     margin-right: 2%;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 2px;
     padding: 2%;
+    border-radius: 5px;
+    border: 2px solid var(--grey-social);
+    color: var(--pink-title);
+    outline: none;
+}
+#modalPostLoad:hover {
+    transform: scale(1.04);
+    border: 2px solid var(--cyan-social);
+    color: var(--cyan-social);
 }
 .commentsContainer{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--grey-social);
 }
 .commentName{
     font-weight: bold;
@@ -273,4 +281,102 @@ hr {
 .commentBody, .commentEmail{
     font-size: 12px;
     margin-bottom: 5px;
+}
+
+/* EDIT MODAL AREA */
+
+.dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    padding-top: 5rem;
+    background-color: rgb(85, 85, 85, 0.3);
+}
+
+.dialog__form {
+    margin: 6vh auto 15vh auto;
+    max-width: 50rem;
+    border-radius: 5px;
+    border: 3px solid var(--grey-social);
+    background-color: #f4f4f4;
+}
+
+.close-modal {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fa-close {
+    padding: 12px;
+}
+
+.dialog__form-div {
+    padding: 3vh;
+}
+
+.dialog__form-div-div{
+    margin: 3vh 0 1vh 0;
+}
+
+.dialog__form-div-h2 {
+    font-size: 2.2rem;
+    color: var(--pink-title);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0.8rem;
+}
+
+.editHr {
+    width: 100%;
+    height: 1.5px;
+}
+
+.dialog__form-div-label{
+    margin-top: 2vh;
+    color: var(--post-grey);
+}
+
+.dialog__form-div-label b {
+    font-size: 1.7rem;
+}
+
+.dialog__form-div-input {
+    width: 100%;
+    padding: 1vh;
+    font-size: 1.6rem;
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    background: linear-gradient(360deg, #dee1e1 20%, #f4f4f4 360%);
+}
+
+.dialog__form-div-input:focus, .dialog__form-div-textarea:focus {
+    border: 2px solid var(--cyan-social);
+    outline: none;
+}
+
+.div__submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.submit {
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 70%;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 2px solid var(--grey-social);
+    color: var(--pink-title);
+}
+.submit:hover {
+    transform: scale(1.04);
+    border: 2px solid var(--cyan-social);
+    color: var(--cyan-social);
 }
