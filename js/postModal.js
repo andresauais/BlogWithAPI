@@ -3,7 +3,8 @@ const comments = 'https://jsonplaceholder.typicode.com/posts/';
 
 function createModal(data){
     $('.postContainer').click(function(e){
-        var modalRoot = $('#modal-post');
+        if(e.target.classList == "postTitle" || e.target.classList == "postBody"){
+            var modalRoot = $('#modal-post');
         var modal = $('.postModal');
 
         var modalPostCloseTop = $("#modalPostCloseTop");
@@ -37,6 +38,7 @@ function createModal(data){
                     console.log(errorMessage);
                 }
             )
+        }
         }
 
         function rootClick() {

@@ -53,7 +53,6 @@ const createPost = data => {
                 console.log(errorMessage);
             }
         )
-        console.log(commentsURL);
 
         $hr.addClass('hrPost');
         $divUser.addClass('divUser');
