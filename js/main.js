@@ -62,10 +62,10 @@ const createPost = data => {
         $calendarIcon.addClass('fa').addClass('fa-calendar').addClass('fa-lg');
         $calendarTitle.addClass('articleTitle').text('4:05 PM');
 
-        $userIcon.addClass('fa').addClass('fa-user').addClass('fa-lg');
         $userButton.addClass('btn').addClass('postButton');
+        $userIcon.addClass('fa').addClass('fa-user').addClass('fa-lg');
 
-        $editButton.addClass('btn').addClass('postButton');
+        $editButton.addClass('btn').addClass('postButton').addClass('postEdit');
         $editIcon.addClass('fa').addClass('fa-edit').addClass('fa-lg');
         $editTitle.addClass('articleTitle').text('Edit');
 
@@ -105,7 +105,8 @@ const createPost = data => {
         $('#container').append($article);
     });
 
-    createModal(data);
+    // createModal(data);
+    editPostModal(data);
 }
 
 $.ajax(link, { method: 'GET' })
