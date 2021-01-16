@@ -19,6 +19,7 @@ html {
     --pink-title: rgb(205,92,92);
     --grey-social: rgb(190, 188, 188);
     --cyan-social: rgb(0,206,209);
+    --modal-white: #f4f4f4;
 }
 
 /* HEADER AREA */
@@ -26,7 +27,7 @@ html {
 .header {
     height: 100vh;
     width: 22vw;
-    background: linear-gradient(360deg, var(--header-grey) 10%, #f4f4f4 360%);
+    background: linear-gradient(360deg, var(--header-grey) 10%, var(--modal-white) 360%);
     position: fixed;
     top: 0;
     left: 0;
@@ -219,7 +220,7 @@ hr {
     position: absolute;
     margin: 0 auto;
     width: 50%;
-    background-color: #f4f4f4;
+    background-color: var(--modal-white);
     padding: 20px;
     border-radius: 5px;
     position: relative;
@@ -262,6 +263,7 @@ hr {
     border: 2px solid var(--grey-social);
     color: var(--pink-title);
     outline: none;
+    font-weight: 600;
 }
 #modalPostLoad:hover {
     transform: scale(1.04);
@@ -301,7 +303,7 @@ hr {
     max-width: 50rem;
     border-radius: 5px;
     border: 3px solid var(--grey-social);
-    background-color: #f4f4f4;
+    background-color: var(--modal-white);
 }
 
 .close-modal {
@@ -350,11 +352,15 @@ hr {
     border: none;
     display: inline-block;
     border-radius: 5px;
-    background: linear-gradient(360deg, #dee1e1 20%, #f4f4f4 360%);
+    background: linear-gradient(360deg, #dee1e1 20%, var(--modal-white) 360%);
 }
 
 .dialog__form-div-input:focus, .dialog__form-div-textarea:focus {
     border: 2px solid var(--cyan-social);
+    outline: none;
+}
+
+#submitBtn:focus {
     outline: none;
 }
 
@@ -379,4 +385,92 @@ hr {
     transform: scale(1.04);
     border: 2px solid var(--cyan-social);
     color: var(--cyan-social);
+}
+
+/* SNIPPET AREA */
+
+.snippet {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: none;
+    border: none;
+    padding-top: 43vh;
+    background-color: transparent;
+}
+
+.sk-bounce {
+    margin: auto;
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+}
+
+.sk-bounce-dot {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--cyan-social);
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sk-bounce 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.sk-bounce-dot:nth-child(2) { animation-delay: -1.0s; }
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0);
+    } 45%, 55% {
+        transform: scale(1);
+    }
+}
+
+.successMessage {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: none;
+    border: none;
+    padding-top: 35vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.success {
+    width: 34vw;
+    height: 20vh;
+    font-size: 1.4rem;
+    background-color: var(--modal-white);
+    border-radius: 10px;
+    border: 3px solid var(--cyan-social);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-check-circle {
+    color: var(--cyan-social);
+}
+
+.successBtn {
+    padding: 1em 0;
+    color: var(--post-grey);
+}
+
+.aside__button-h3 {
+    font-size: 2rem;
+}
+
+.aside__button-p {
+    font-size: 1.5rem;
+    margin-bottom: 0.3em;
 }

@@ -34,9 +34,9 @@
     </main>
     <dialog class="dialog" id="dialog">
         <form class="dialog__form" id="form">
-            <div class="close-modal"><i id="editClose" class="fa fa-close"></i></div>
+            <div class="close-modal"><i id="editClose" class="fa fa-close fa-lg"></i></div>
             <div class="dialog__form-div">
-                <h2 class="dialog__form-div-h2" id="editPost">Edit Post</h2>
+                <h2 class="dialog__form-div-h2" id="editPost"></h2>
                 <hr class="editHr">
                 <div class="dialog__form-div-div">
                     <label class="dialog__form-div-label" for="title"><b id="editTitle">Post Title</b></label>
@@ -47,14 +47,14 @@
                     <textarea class="dialog__form-div-input" type="text"  name="body" id="body" rows="5" required autocomplete="off"></textarea>
                 </div>
                 <div class="div__submit">
-                    <input class="submit create-task not-allowed" id="submitBtn" type="submit" value="Update Post"/>
+                    <input class="submit create-task not-allowed" id="submitBtn" type="submit" value=""/>
                 </div>
             </div>
         </form>
     </dialog>
     <aside id="modal-post">
         <div class="modal postModal">
-            <div id="modalPostCloseTop" class="close-modal"><i class="fa fa-close"></i></div>
+            <div id="modalPostCloseTop" class="close-modal"><i class="fa fa-close fa-lg"></i></div>
             <p id="modalPostTitle" class="postTitle"></p>
             <p id="modalPostBody"></p>
             <p class="modalHeader">USER<p>
@@ -65,6 +65,19 @@
                 <button id="modalPostLoad">Load Comments</button>
             </div>
             <div id="comments"></div>
+        </div>
+    </aside>
+    <aside class="snippet">
+        <figure class="sk-bounce">
+            <div class="sk-bounce-dot"></div>
+            <div class="sk-bounce-dot"></div>
+        </figure>
+    </aside>
+    <aside class="successMessage">
+        <div class="success">
+            <button class="btn successBtn"><i class="fas fa-check-circle fa-3x"></i></button>
+            <button class="btn successBtn"><h3 class="aside__button-h3">Great!</h3></button>
+            <button class="btn successBtn"><p class="aside__button-p">Your post has been successfully updated</p></button>
         </div>
     </aside>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

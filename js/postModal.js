@@ -12,10 +12,6 @@ function createModal(data){
 
         setUpModal();
         openModal();
-        //modalRoot.click(()=> {rootClick()});
-        //modal.click(function() {modalClick(e)});
-
-        //$('#modalPostLoad').on("click", loadComments(data[e.currentTarget.id].id));
 
         function setUpModal(){
             var dataId = data[event.currentTarget.id].id;
@@ -69,7 +65,6 @@ function matchUserWithPost(usersData, userIdPost){
 }
 
 function loadComments(postId){
-    console.log(postId);
     $('#modalPostLoad').hide();
     let commentsContainer = $('<div></div>')
     commentsContainer.attr('id','commentsContainer');
