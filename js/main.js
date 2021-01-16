@@ -1,3 +1,8 @@
+$(function() {
+    $('.successMessage').hide();
+    $('.snippet').hide();
+});
+
 const link = 'https://jsonplaceholder.typicode.com/posts/',
     success = (data, statusText, jqXHR) => createPost(data),
     fail = (jqXHR, errorStatusText, errorMessage) => console.log(errorMessage);
@@ -113,8 +118,3 @@ const createPost = data => {
 
 $.ajax(link, { method: 'GET' })
     .then(success, fail);
-
-$(function() {
-    $('.successMessage').hide();
-    $('.snippet').hide();
-});
