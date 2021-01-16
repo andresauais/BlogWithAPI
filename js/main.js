@@ -30,6 +30,7 @@ const createPost = data => {
 
         const $body = createBody(post.body);
         const $userTitle = createUserTitle(post.userId);
+
         $.ajax(users, {
             method: 'GET'
         }).then(
@@ -69,7 +70,7 @@ const createPost = data => {
         $editIcon.addClass('fa').addClass('fa-edit').addClass('fa-lg');
         $editTitle.addClass('articleTitle').text('Edit');
 
-        $deleteButton.addClass('btn').addClass('postButton');
+        $deleteButton.addClass('btn').addClass('postButton').addClass('postDelete');
         $deleteIcon.addClass('fa').addClass('fa-trash').addClass('fa-lg');
         $deleteTitle.addClass('articleTitle').text('Delete');
 
@@ -107,7 +108,13 @@ const createPost = data => {
 
     createModal(data);
     editPostModal(data);
+    deletePostModal(data);
 }
 
 $.ajax(link, { method: 'GET' })
     .then(success, fail);
+
+$(function() {
+    $('.successMessage').hide();
+    $('.snippet').hide();
+});
