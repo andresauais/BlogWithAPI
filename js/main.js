@@ -1,11 +1,10 @@
+const link = 'https://jsonplaceholder.typicode.com/posts/',
+success = (data, statusText, jqXHR) => createPost(data),
+fail = (jqXHR, errorStatusText, errorMessage) => console.log(errorMessage);
+
 $(function() {
     $('.successMessage').hide();
-    $('.snippet').hide();
 });
-
-const link = 'https://jsonplaceholder.typicode.com/posts/',
-    success = (data, statusText, jqXHR) => createPost(data),
-    fail = (jqXHR, errorStatusText, errorMessage) => console.log(errorMessage);
 
 const createPost = data => {
     const createTitle = title => $('<h3></h3>').addClass('postTitle').text(title);
@@ -40,6 +39,7 @@ const createPost = data => {
             method: 'GET'
         }).then(
             function success(usersData, statusText, jqXHR){
+                $('.snippet').hide();
                 matchUserWithPost(usersData, post.userId);
                 $userTitle.text(matchUserWithPost(usersData, post.userId)[0]);
             },
@@ -48,7 +48,7 @@ const createPost = data => {
             }
         )
         const $commentTitle = createCommentTitle(post.userId);
-        var commentsURL = comments + post.id + "/comments";
+        var commentsURL = comments + post.id + '/comments';
         $.ajax(commentsURL, {
             method: 'GET'
         }).then(
