@@ -3,11 +3,11 @@ const comments = 'https://jsonplaceholder.typicode.com/posts/';
 
 function createModal(data){
     $('.postContainer').click(function(e){
-        if(e.target.classList == "postTitle" || e.target.classList == "postBody"){
+        if(e.target.classList == 'postTitle' || e.target.classList == 'postBody'){
             var modalRoot = $('#modal-post');
         var modal = $('.postModal');
 
-        var modalPostCloseTop = $("#modalPostCloseTop");
+        var modalPostCloseTop = $('#modalPostCloseTop');
         modalPostCloseTop.click(function(){rootClick();});
 
         setUpModal();
@@ -15,8 +15,8 @@ function createModal(data){
 
         function setUpModal(){
             var dataId = data[event.currentTarget.id].id;
-            $("#modalPostTitle").text(data[event.currentTarget.id].title);
-            $("#modalPostBody").text(data[event.currentTarget.id].body);
+            $('#modalPostTitle').text(data[event.currentTarget.id].title);
+            $('#modalPostBody').text(data[event.currentTarget.id].body);
             var userIdPost = data[event.currentTarget.id].userId;
             $.ajax(users, {
                 method: 'GET'
@@ -25,7 +25,7 @@ function createModal(data){
                     matchUserWithPost(usersData, userIdPost);
                     $('#modalPostUserId').text(matchUserWithPost(usersData, userIdPost)[0]);
                     $('#modalPostEmail').text(matchUserWithPost(usersData, userIdPost)[1]);
-                    $('#modalPostLoad').on("click", ()=>{
+                    $('#modalPostLoad').on('click', ()=>{
                         loadComments(dataId);
                         dataId = undefined;
                     })
@@ -69,7 +69,7 @@ function loadComments(postId){
     let commentsContainer = $('<div></div>')
     commentsContainer.attr('id','commentsContainer');
     $('#comments').append(commentsContainer);
-    var commentsURL = comments + postId + "/comments";
+    var commentsURL = comments + postId + '/comments';
     $.ajax(commentsURL, {
         method: 'GET'
     }).then(
@@ -94,19 +94,19 @@ function createComments(commentsData){
     }
     function createCommentName(name){
         let p = $('<p></p>');
-        p.addClass("commentName");
+        p.addClass('commentName');
         p.text(name);
         return p;
     }
     function createCommentBody(body){
         let p = $('<p></p>');
-        p.addClass("commentBody");
+        p.addClass('commentBody');
         p.text(body);
         return p;
     }
     function createCommentEmail(email){
         let p = $('<p></p>');
-        p.addClass("commentEmail");
+        p.addClass('commentEmail');
         p.text(email);
         return p;
     }
